@@ -10,7 +10,6 @@ while true
     if mode == :waiting
       if b[0] == 2
         direction = b[1] == 1 ? :in : :out
-        puts direction
         mode = :border
       end
     elsif mode == :border
@@ -18,7 +17,7 @@ while true
     elsif mode == :payload
       if b[0] == 0 && b[1] == 0
         mode = :waiting
-        puts data.join
+        puts "#{direction}\t#{data.join}"
         data = []
       else
         data << b[0].to_s(16) 
