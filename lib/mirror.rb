@@ -2,7 +2,7 @@ f = File.open('/dev/hidraw3', 'r')
 
 mode = :waiting
 direction = nil
-data = []
+payload = []
 
 while true
   begin
@@ -10,18 +10,18 @@ while true
     if mode == :waiting
       if b[0] == 2
         direction = b[1] == 1 ? :in : :out
-        mode = :border
+        mode = :payload
+        f.read(2)
       end
-    elsif mode == :border
-      mode = :payload
     elsif mode == :payload
       if b[0] == 0 && b[1] == 0
         mode = :waiting
-        puts "#{direction}\t#{data.join}"
-        data = []
+        puts "#{direction}\t#{payload.join}"
+        puts payload
+        payload = []
       else
-        data << b[0].to_s(16) 
-        data << b[1].to_s(16) 
+        payload << b[0].to_s(16) 
+        payload << b[1].to_s(16) 
       end
     end
   end
