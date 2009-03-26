@@ -23,6 +23,11 @@ while true
         payload << b[1].to_s(16) if b[1] != 0
       end
     end
+  rescue Errno::EAGAIN
+    puts "test"
+  rescue Errno::EIO
+    puts "bye."
+    exit(0)
   end
 end
 
