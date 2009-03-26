@@ -52,3 +52,6 @@ Change <tt>/dev/hidraw3</tt> to your device in <tt>lib/mirror.rb</tt>
   in    8d021a352d02aaf0
   out   8d021a352d02aaf0
 
+== Help
+
+If you can provide code or information regarding the mir:ror or the ztamps please contact me.
