@@ -82,3 +82,6 @@ Change <tt>/dev/hidraw3</tt> to your device in <tt>bin/ruby-mirror.rb</tt>
 
 If you can provide code or information regarding the mir:ror or the ztamps please contact me.
 
+== License
+
+See COPYING for legal information. It's an MIT license, which lets you do anything you want with this.
