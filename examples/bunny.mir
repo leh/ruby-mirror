@@ -1,0 +1,7 @@
+tag_in "d0021a0352d60e3d" do
+  puts "oneiros' green bunny is in the house."
+end
+
+tag_out "d0021a0352d60e3d" do
+  puts "oneiros' green bunny has left the building."
+end
