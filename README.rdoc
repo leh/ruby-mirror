@@ -1,6 +1,6 @@
 = ruby-mirror
 
-This library tries to provide an interface to the rfid reader {mir:ror by violet}[http://www.violet.net/_mirror-give-powers-to-your-objects.html]. This is only tested on linux. Maybe it works on other Unixes (FreeBSD, OSX, etc.) too.
+This library tries to provide an open source interface to the rfid reader {mir:ror by violet}[http://www.violet.net/_mirror-give-powers-to-your-objects.html]. This is only tested on linux. Maybe it works on other Unixes (FreeBSD, OSX, etc.) too.
 
 == Protocol
 
@@ -78,6 +78,31 @@ Change <tt>/dev/hidraw3</tt> to your device in <tt>bin/ruby-mirror.rb</tt>
   oneiros' green bunny has left the building.
   hey d0021a053b4d20c3 stranger, never seen you before
 
+== Misc
+
+Mir:ror ID
+
+  $ sudo lsusb -d 1da8:1301 -v
+
+  Bus 001 Device 010: ID 1da8:1301  
+  Device Descriptor:
+    bLength                18
+    bDescriptorType         1
+    bcdUSB               1.10
+    bDeviceClass            0 (Defined at Interface level)
+    bDeviceSubClass         0 
+    bDeviceProtocol         0 
+    bMaxPacketSize0        64
+    idVendor           0x1da8 
+    idProduct          0x1301 
+    bcdDevice            1.00
+    iManufacturer           4 Violet
+    iProduct               18 Mirror
+    iSerial                32 4310FFFF <----
+    bNumConfigurations      1
+
+which corresponds to the violets mir:ror id FFFF0134
+
 == Help
 
 If you can provide code or information regarding the mir:ror or the ztamps please contact me.
@@ -85,3 +110,5 @@ If you can provide code or information regarding the mir:ror or the ztamps pleas
 == License
 
 See COPYING for legal information. It's an MIT license, which lets you do anything you want with this.
+
+
