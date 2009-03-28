@@ -68,16 +68,15 @@ You'll have to repeat this each time you plug the mir:ror in.
 
 === Adjust the path
 
-Change <tt>/dev/hidraw3</tt> to your device in <tt>lib/mirror.rb</tt>
+Change <tt>/dev/hidraw3</tt> to your device in <tt>bin/ruby-mirror.rb</tt>
 
 === Run the sample
 
-  $ ruby lib/mirror.rb
+  $ ruby bin/ruby_mirror.rb examples/bunny.mir
 
-  in    8d021a35314234c0
-  out   8d021a35314234c0
-  in    8d021a352d02aaf0
-  out   8d021a352d02aaf0
+  oneiros' green bunny is in the house.
+  oneiros' green bunny has left the building.
+  hey d0021a053b4d20c3 stranger, never seen you before
 
 == Help
 
