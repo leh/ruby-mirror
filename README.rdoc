@@ -2,7 +2,34 @@
 
 This library tries to provide an interface to the rfid reader {mir:ror by violet}[http://www.violet.net/_mirror-give-powers-to-your-objects.html]. This is only tested on linux. Maybe it works on other Unixes (FreeBSD, OSX, etc.) too.
 
-== notes
+== Protocol
+
+Sample input:
+  
+  Mifare-type rfid (used in some cafeteria / library cards)
+  02 01 00 00 04 72 9c 0b 90
+
+  nano:ztag
+  02 02 00 00 08 d0 02 1a 03 52 d0 2a af
+
+Protocol:
+
+                 ------- payload ------
+                 |  |  |  |  |  |  |  |
+
+              -- payload size
+              |
+  02 02 00 00 08 d0 02 1a 03 52 d0 2a af
+  ^
+  -- opening flag
+
+     ^
+     -- direction (01 for arriving at the reader / 02 for leaving the reader)
+
+        ^  ^
+        ------ padding or additional payload size information
+
+== Using the library
 
 This is rather a rough scretch than a working interface.
 
@@ -55,3 +82,4 @@ Change <tt>/dev/hidraw3</tt> to your device in <tt>lib/mirror.rb</tt>
 == Help
 
 If you can provide code or information regarding the mir:ror or the ztamps please contact me.
+
