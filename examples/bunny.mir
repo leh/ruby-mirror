@@ -5,3 +5,7 @@ end
 tag_out "d0021a0352d60e3d" do
   puts "oneiros' green bunny has left the building."
 end
+
+unknown_tag do |tag|
+ puts "hey #{tag}, never seen you before"
+end

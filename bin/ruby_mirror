@@ -12,5 +12,17 @@ unless (ARGV.size == 1 && File.exist?(ARGV[0])) or
   usage and exit 1
 end
 
-r = RubyMirror.new(ARGV[ARGV.size - 1], (ARGV[0] == "-v"))
-r.run
+begin
+  r = RubyMirror.new(ARGV[ARGV.size - 1], {:device => '/dev/hidraw3', :verbose => (ARGV[0] == "-v")})
+  r.run
+rescue Errno::EAGAIN
+  puts "test"
+rescue Errno::EIO, Interrupt
+  puts "\nbye."
+  exit 0
+rescue Exception => e
+  usage
+  puts e
+  exit 1
+end
+
